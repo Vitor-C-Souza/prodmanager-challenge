@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = git@github.com:Vitor-C-Souza/prodmanager-API.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Vitor-C-Souza/prodmanager-front
