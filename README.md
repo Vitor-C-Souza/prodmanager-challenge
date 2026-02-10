@@ -27,7 +27,7 @@ The entire environment is containerized. You don't need to install Java, Node, o
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Vitor-C-Souza/prodmanager-challenge.git](https://github.com/Vitor-C-Souza/prodmanager-challenge.git)
+    git clone --recursive [https://github.com/Vitor-C-Souza/prodmanager-challenge.git](https://github.com/Vitor-C-Souza/prodmanager-challenge.git)
     cd prodmanager-challenge
     ```
 
