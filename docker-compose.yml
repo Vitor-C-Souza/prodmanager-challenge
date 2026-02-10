@@ -21,7 +21,7 @@ services:
       - prodmanager-net
 
   backend:
-    build: ./prodmanager-API
+    build: ./backend
     container_name: prodmanager-backend
     depends_on:
       oracle:
@@ -38,7 +38,7 @@ services:
       - prodmanager-net
 
   frontend:
-    build: ./prodmanager-front
+    build: ./frontend
     container_name: prodmanager-frontend
     ports:
       - "80:80"
