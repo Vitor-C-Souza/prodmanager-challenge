@@ -49,6 +49,7 @@ The entire environment is containerized. You don't need to install Java, Node, o
 * ⚙️ **Production Algorithm**: Intelligent prioritization logic based on profit margins (Higher revenue first).
 * 📦 **Inventory Management**: Real-time stock tracking for products and raw materials.
 * 📊 **Financial Reporting**: Automated simulation reports and revenue calculation.
+* 🚀 **Redis Caching**: Frequently accessed data cached to reduce database load and improve response time.
 * 🐳 **Production-Ready Infra**: Frontend served via optimized Nginx with Gzip and SPA routing.
 * 🛡️ **CORS & Security**: Fully configured for cross-origin communication between containers.
 
@@ -61,6 +62,7 @@ The entire environment is containerized. You don't need to install Java, Node, o
 | **Backend** | Java 17, Spring Boot 3.x, Spring Security, JPA, Flyway |
 | **Frontend** | React 19, TypeScript, Vite, Tailwind CSS |
 | **Database** | Oracle Database XE 21c |
+| **Cache**      | Redis |
 | **DevOps** | Docker, Docker Compose, Nginx |
 
 ---

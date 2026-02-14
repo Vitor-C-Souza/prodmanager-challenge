@@ -1,4 +1,20 @@
 services:
+  redis:
+    image: redis:7-alpine
+    container_name: prodmanager-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - prodmanager-net
+
   oracle:
     image: gvenzl/oracle-xe:21-slim
     container_name: prodmanager-oracle
@@ -26,6 +42,8 @@ services:
     depends_on:
       oracle:
         condition: service_healthy
+      redis:
+        condition: service_healthy
     ports:
       - "8080:8080"
     environment:
@@ -33,7 +51,8 @@ services:
       - SPRING_DATASOURCE_USERNAME=produser
       - SPRING_DATASOURCE_PASSWORD=prodpass
       - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_FLYWAY_URL=jdbc:oracle:thin:@oracle:1521/XEPDB1
+      - SPRING_REDIS_HOST=redis
+      - SPRING_REDIS_PORT=6379
     networks:
       - prodmanager-net
 
