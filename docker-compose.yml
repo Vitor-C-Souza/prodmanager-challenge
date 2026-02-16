@@ -71,6 +71,7 @@ services:
 
 volumes:
   oracle_data:
+  redis_data:
 
 networks:
   prodmanager-net:
